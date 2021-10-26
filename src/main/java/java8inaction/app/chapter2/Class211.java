@@ -1,5 +1,9 @@
-import java.util.List;
+package java8inaction.app.chapter2;
+
+import static java.lang.System.out;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Class211 {
 
@@ -11,17 +15,16 @@ public class Class211 {
     apples.add(new Apple("green", 90));
 
     List<Apple> greenApples = filterGreenApples(apples);
-    System.out.println(greenApples.size());
+    out.println(greenApples.size());
   }
 
   public static List<Apple> filterGreenApples(List<Apple> invetory) {
     List<Apple> result = new ArrayList<>();
-    for(Apple apple: invetory) {
-      if("green".equals(apple.getColor())) {
+    for (Apple apple : invetory) {
+      if ("green".equals(apple.color())) {
         result.add(apple);
       }
     }
     return result;
   }
 }
-

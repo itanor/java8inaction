@@ -1,3 +1,5 @@
+package java8inaction.app.chapter2;
+
 public class Apple {
 
   private String color;
@@ -8,12 +10,11 @@ public class Apple {
     this.weight = weight;
   }
 
-  public String getColor() {
+  public String color() {
     return color;
   }
 
-  public int getWeight() {
+  public int weight() {
     return weight;
   }
 }
-

@@ -1,5 +1,9 @@
-import java.util.List;
+package java8inaction.app.chapter2;
+
+import static java.lang.System.out;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Class221 {
 
@@ -13,13 +17,13 @@ public class Class221 {
     inventory.add(new Apple("green", 100));
 
     List<Apple> filteredApples = filterApples(inventory, new AppleGreenColorPredicate());
-    System.out.println(filteredApples.size());
-    
+    out.println(filteredApples.size());
+
     filteredApples = filterApples(inventory, new AppleHeavyWeightPredicate());
-    System.out.println(filteredApples.size());
+    out.println(filteredApples.size());
 
     filteredApples = filterApples(inventory, new AppleRedAndHeavyPredicate());
-    System.out.println(filteredApples.size());
+    out.println(filteredApples.size());
 
     prettyPrintApple(inventory, new AppleFancyFormatter());
     prettyPrintApple(inventory, new AppleSimpleFormatter());
@@ -27,8 +31,8 @@ public class Class221 {
 
   private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate predicate) {
     List<Apple> result = new ArrayList<>();
-    for(Apple apple: inventory) {
-      if(predicate.test(apple)) {
+    for (Apple apple : inventory) {
+      if (predicate.test(apple)) {
         result.add(apple);
       }
     }
@@ -36,9 +40,8 @@ public class Class221 {
   }
 
   private static void prettyPrintApple(List<Apple> inventory, AppleFormatter formatter) {
-    for(Apple apple: inventory) {
+    for (Apple apple : inventory) {
       System.out.println(formatter.format(apple));
     }
   }
 }
-
